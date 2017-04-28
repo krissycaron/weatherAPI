@@ -2,10 +2,12 @@ $(document).ready(function(){
 
 	const apiKey = "";
 
+
 	console.log("getting here? ");
 
 	$("body").on("click", "#buttonPress", (e)=> {
-		console.log("button clicked");
+		let zipCode = $("#zipCodeInput").val();
+		console.log();
 		loadWeatherData().then((result)=>{
 			console.log(result);
 		});
@@ -15,11 +17,15 @@ $(document).ready(function(){
 	const loadWeatherData = (city)=> {
 		// console.log(city);
 		return new Promise ((resolve, reject) => {
-			$.ajax(`http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=${apiKey}`)
+			$.ajax(`http://api.openweathermap.org/data/2.5/forecast/daily?zip=04090,us&units=imperial&APPID=${apiKey}`)
 			.done((data)=> resolve(data))
 			.fail((error)=>reject("error", error));
 		});
 	};
- 	// loadWeatherData();
+
+	// const writeWeatherToDom = (result)=>{
+	// 	let domString
+	// }
+
 
 });

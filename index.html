@@ -6,8 +6,20 @@
 
 </head>
 <body>
-
-<button id="buttonPress">weather</button>
+	<div class="container">
+		<header>Check that weather!</header>
+	</div>
+	<div class="container">
+		<div class=col-sm-6>
+			<div class="container">
+			  <div class="form-group">
+			    <label>Zip Code</label>
+			    <input id="zipCodeInput" type="text" pattern="[0-9]{5}" title="Five digit zip code" />
+			  </div>
+			  <button id="buttonPress" type="submit" class="btn btn-default">Get Weather</button>
+			</div>
+		</div>
+	</div>
 <script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script type="text/javascript" src="./javascripts/main.js"></script>
